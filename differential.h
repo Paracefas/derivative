@@ -14,7 +14,7 @@ auto derivative_(Function f, double x) {
 
 template<typename Function>
 auto derivative(Function f) {
-    return [&f](double x) { derivative_(f, x); };
+    return [=](double x) { derivative_(f, x); };
 }
 
 template<typename Function, typename T, size_t... I>
